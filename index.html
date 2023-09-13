@@ -17,9 +17,10 @@
     "esri/Map", 
     "esri/views/MapView",
     "esri/widgets/BasemapGallery",
-    "esri/widgets/Locate"
+    "esri/widgets/Locate",
+    "esri/widgets/Search"
 
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate) {   
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search) {   
 
     esriConfig.apiKey = "AAPK4459189bcc7b4e2d8ff194d31d9125cfjZM8_cSJ3uLo2bE7Jq4goFxlCyhZkpBoUjFc7QAnx4GSwwWPCVNO4w2-7tMr3ZYs";
 
@@ -50,7 +51,8 @@ let locateWidget = new Locate({
   })
 });
 
-view.ui.add(locateWidget, "bottom-right");
+view.ui.add(locateWidget, {
+  position:"bottom-right"});
 
   });  
  </script>
