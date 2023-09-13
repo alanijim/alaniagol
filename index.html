@@ -15,8 +15,10 @@
   require([
     "esri/config", 
     "esri/Map", 
-    "esri/views/MapView"
-  ], function(esriConfig, Map, MapView) {   
+    "esri/views/MapView",
+    "esri/widgets/BasemapGallery"
+
+  ], function(esriConfig, Map, MapView, BasemapGallery) {   
 
     esriConfig.apiKey = "AAPK4459189bcc7b4e2d8ff194d31d9125cfjZM8_cSJ3uLo2bE7Jq4goFxlCyhZkpBoUjFc7QAnx4GSwwWPCVNO4w2-7tMr3ZYs";
 
@@ -29,6 +31,14 @@
  center: [32.582520, 0.347596], // Longitude, latitude
  zoom: 13, // Zoom level
  container: "viewDiv" // Div element
+});
+ // adding gallery for basemap here
+ let basemapGallery = new BasemapGallery({
+  view: view
+});
+// Add widget to the top right corner of the view
+view.ui.add(basemapGallery, {
+  position: "top-right"
 });
 
   });  
