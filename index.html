@@ -16,9 +16,10 @@
     "esri/config", 
     "esri/Map", 
     "esri/views/MapView",
-    "esri/widgets/BasemapGallery"
+    "esri/widgets/BasemapGallery",
+    "esri/widgets/Locate"
 
-  ], function(esriConfig, Map, MapView, BasemapGallery) {   
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate) {   
 
     esriConfig.apiKey = "AAPK4459189bcc7b4e2d8ff194d31d9125cfjZM8_cSJ3uLo2bE7Jq4goFxlCyhZkpBoUjFc7QAnx4GSwwWPCVNO4w2-7tMr3ZYs";
 
@@ -40,6 +41,16 @@
 view.ui.add(basemapGallery, {
   position: "top-right"
 });
+// adding locator button
+let locateWidget = new Locate({
+  view: view,   // Attaches the Locate button to the view
+  graphic: new Graphic({
+    symbol: { type: "simple-marker" }  // overwrites the default symbol used for the
+    // graphic placed at the location of the user when found
+  })
+});
+
+view.ui.add(locateWidget, "top-left");
 
   });  
  </script>
