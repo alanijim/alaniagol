@@ -43,16 +43,14 @@ view.ui.add(basemapGallery, {
   position: "top-right"
 });
 // adding locator button
-let locateWidget = new Locate({
-  view: view,   // Attaches the Locate button to the view
-  graphic: new Graphic({
-    symbol: { type: "simple-marker" }  // overwrites the default symbol used for the
-    // graphic placed at the location of the user when found
-  })
-});
+const locateBtn = new Locate({
+          view: view
+        });
 
-view.ui.add(locateWidget, {
-  position:"bottom-right"});
+        // Add the locate widget to the top left corner of the view
+        view.ui.add(locateBtn, {
+          position: "top-left"
+        });
 
   // adding search
   const searchWidget = new Search({
