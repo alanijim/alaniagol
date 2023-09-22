@@ -1,2 +1,2 @@
-# alaniesrijs
-my first esri JS Map
+# alaniagol
+my first esri JS Map accessing ArcGisOL
