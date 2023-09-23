@@ -28,10 +28,13 @@
     // adding a polyline
     "esri/geometry/Polyline",
     // adding a geometry
-    "esri/geometry/Polygon"
+    "esri/geometry/Polygon",
+
+    //adding in the module for the feature layers
+    "esri/layers/FeatureLayer"
 
 
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer, SimpleMarkerSymbol, Polyline, Polygon) {   
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer, SimpleMarkerSymbol, Polyline, Polygon, FeatureLayer) {   
 
     esriConfig.apiKey = "AAPK4459189bcc7b4e2d8ff194d31d9125cfjZM8_cSJ3uLo2bE7Jq4goFxlCyhZkpBoUjFc7QAnx4GSwwWPCVNO4w2-7tMr3ZYs";
 
@@ -106,6 +109,12 @@ popupTemplate: popupTemplate
 
 //adding the point to the graphicsLayer
 graphicsLayer.add(pointGraphic);
+
+//adding the constructor for the feature layer
+const usaeduLayer = new FeatureLayer({
+url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Colleges_and_Universities_View/FeatureServer"
+});
+map.add(usaeduLayer);
 
  // adding gallery for basemap here
  const basemapGallery = new BasemapGallery({
