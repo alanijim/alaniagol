@@ -131,23 +131,7 @@ popupTemplate: popupEduusa
 map.add(usaeduLayer);
 
 // adding airport codes
-// Define a pop-up for usaapLayer
-const popupApusa = {
-  "title": "Airports",
-  "content": "<b>airfield:</b> {Fac_Type}<br><b>Regional code:</b> {Region_Code}<br>"
-}
 
-//adding the Const for the feature layer
-const usaapLayer = new FeatureLayer({
-url: "hhttps://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_aj/FeatureServer",
-
-//adding the popup here
-outFields: ["Fac_Type","Region_Code"],
-popupTemplate: popupApusa
- });
-
-//adding the feature layer to the map
-map.add(usaapLayer);
 
 
 
