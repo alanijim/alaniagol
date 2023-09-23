@@ -22,9 +22,11 @@
 
     // adding in the modules for graphic and graphic layer
     "esri/Graphic",
-    "esri/layers/GraphicsLayer"
+    "esri/layers/GraphicsLayer",
+    // adding simpleMarkerSymbol
+    "esri/symbols/SimpleMarkerSymbol"
 
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer) {   
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer, SimpleMarkerSymbol) {   
 
     esriConfig.apiKey = "AAPK4459189bcc7b4e2d8ff194d31d9125cfjZM8_cSJ3uLo2bE7Jq4goFxlCyhZkpBoUjFc7QAnx4GSwwWPCVNO4w2-7tMr3ZYs";
 
@@ -53,6 +55,7 @@ const point = { //Create a point
 //defining the maker style
 const simpleMarkerSymbol = {  
   type: "simple-marker", 
+  style: "square", // style to square
   color: [0, 0, 139],  // Color of blues rock
   outline: {  
     color: [255, 255, 255], // White  
