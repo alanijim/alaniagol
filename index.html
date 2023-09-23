@@ -45,29 +45,22 @@
  zoom: 13, // Zoom level
  container: "viewDiv" // Div element
 });
- // adding the construct for the polygon
-
- //3D polygon rings with m-values (note that the second ring does not have m-values defined for it)
-const rings = [
- [  // first ring
-  [-97.06138,32.837,35.1,4.8],
-  [-97.06133,32.836,35.2,4.1],
-  [-97.06124,32.834,35.3,4.2],
-  [-97.06138,32.837,35.1,4.8]  // same as first vertex
- ], [  // second ring
-  [-97.06326,32.759,35.4],
-  [-97.06298,32.755,35.5],
-  [-97.06153,32.749,35.6],
-  [-97.06326,32.759,35.4]  // same as first vertex
+ // adding the construct for the polyline
+// 2D polyline with to paths with m-values (note that the 2nd path does not have m-values defined)
+let paths = [
+  [  // second path
+  [-97.7431, 30.2672],
+  [-97.7374020504, 30.2575156366]
  ]
 ];
 
-const polygon = new Polygon({
-  hasZ: true,
+let line = new Polyline({
+  hasZ: false,
   hasM: true,
-  rings: rings,
+  paths: paths,
   spatialReference: { wkid: 4326 }
 });
+ 
 // adding the constructor for the graphicslayer
 const graphicsLayer = new GraphicsLayer();  
 map.add(graphicsLayer);
