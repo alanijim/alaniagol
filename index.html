@@ -133,7 +133,7 @@ map.add(usaeduLayer);
 // adding airport codes
 
 // setting up the icon
-/*const airportRenderer = {
+const airportRenderer = {
         "type": "simple",
         "symbol": {
           "type": "picture-marker",
@@ -141,11 +141,11 @@ map.add(usaeduLayer);
           "width": "18px",
           "height": "18px"
         }
-      } */
+      } 
 
       const airportLayer = new FeatureLayer({
           url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_aj/FeatureServer",
-          //renderer: airportRenderer
+          renderer: airportRenderer
         });
 
         //adding the feature layer to the map
