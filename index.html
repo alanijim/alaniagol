@@ -31,10 +31,11 @@
     "esri/geometry/Polygon",
 
     //adding in the module for the feature layers
-    "esri/layers/FeatureLayer"
+    "esri/layers/FeatureLayer",
+    // adding picture maker
+    "esri/symbols/PictureMarkerSymbol"
 
-
-  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer, SimpleMarkerSymbol, Polyline, Polygon, FeatureLayer) {   
+  ], function(esriConfig, Map, MapView, BasemapGallery, Locate, Search, Graphic, GraphicsLayer, SimpleMarkerSymbol, Polyline, Polygon, FeatureLayer, PictureMarkerSymbol) {   
 
     esriConfig.apiKey = "AAPK4459189bcc7b4e2d8ff194d31d9125cfjZM8_cSJ3uLo2bE7Jq4goFxlCyhZkpBoUjFc7QAnx4GSwwWPCVNO4w2-7tMr3ZYs";
 
@@ -145,7 +146,7 @@ const airportRenderer = {
 
       const airportLayer = new FeatureLayer({
           url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_aj/FeatureServer",
-          renderer: airportRenderer
+          renderer: airportRenderer // calling the icon
         });
 
         //adding the feature layer to the map
